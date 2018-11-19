@@ -1,0 +1,19 @@
+name: datadog-event
+description: Send a deployment complete event to datadog
+author: https://github.com/seek-oss
+configuration:
+  properties:
+    title:
+      type: string
+    tags:
+      type: string
+    priority:
+      type: string
+    alertType:
+      type: string
+    datadogApiKey:
+      type: string
+  required:
+    - title
+    - tags
+    - datadogApiKey

@@ -16,6 +16,7 @@ PAYLOAD="{ \"title\": \"${BUILDKITE_PLUGIN_DATADOG_EVENT_TITLE}\", \"priority\":
 API_END_POINT="https://app.datadoghq.com/api/v1/events?api_key=${!BUILDKITE_PLUGIN_DATADOG_EVENT_ENV}"
 
 echo "Event payload: $PAYLOAD"
+echo "Datadog api endpoint: $API_END_POINT"
 
 curl -X POST -H "Content-type: application/json" -d "$PAYLOAD" "$API_END_POINT" 2>&1 | grep 'status":"ok"'
 

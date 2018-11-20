@@ -9,11 +9,11 @@ configuration:
       type: string
     priority:
       type: string
-    alertType:
+    alert-type:
       type: string
-    datadogApiKey:
+    datadog-api-key:
       type: string
   required:
     - title
     - tags
-    - datadogApiKey
+    - datadog-api-key

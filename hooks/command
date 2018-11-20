@@ -6,16 +6,16 @@ set -euo pipefail
 abort()
 {
 
-  echo "An error occurred. Exiting..." >&2
+  echo "An error occurred in the plugin. Exiting..." >&2
   exit 1
 }
 
 echo "--- Sending deployment events to datadog"
 
-echo "{ \"title\": \"${BUILDKITE_PLUGIN_DATADOG_EVENT_TITLE}\", \"priority\": \"${BUILDKITE_PLUGIN_DATADOG_EVENT_PRIORITY-normal}\", \"tags\": \"${BUILDKITE_PLUGIN_DATADOG_EVENT_TAGS}\", \"alert_type\": \"${BUILDKITE_PLUGIN_DATADOG_EVENT_ALERTTYPE-info}\" }"
-echo "https://app.datadoghq.com/api/v1/events?api_key=${BUILDKITE_PLUGIN_DATADOG_EVENT_DATADOGAPIKEY}"
+echo "{ \"title\": \"${BUILDKITE_PLUGIN_DATADOG_EVENT_TITLE}\", \"priority\": \"${BUILDKITE_PLUGIN_DATADOG_EVENT_PRIORITY-normal}\", \"tags\": \"${BUILDKITE_PLUGIN_DATADOG_EVENT_TAGS}\", \"alert_type\": \"${BUILDKITE_PLUGIN_DATADOG_EVENT_ALERT_TYPE-info}\" }"
+echo "https://app.datadoghq.com/api/v1/events?api_key=${BUILDKITE_PLUGIN_DATADOG_EVENT_DATADOG_API_KEY}"
 
-curl -X POST -H "Content-type: application/json" -d "{ \"title\": \"${BUILDKITE_PLUGIN_DATADOG_EVENT_TITLE}\", \"priority\": \"${BUILDKITE_PLUGIN_DATADOG_EVENT_PRIORITY-normal}\", \"tags\": \"${BUILDKITE_PLUGIN_DATADOG_EVENT_TAGS}\", \"alert_type\": \"${BUILDKITE_PLUGIN_DATADOG_EVENT_ALERTTYPE-info}\" }" "https://app.datadoghq.com/api/v1/events?api_key=${BUILDKITE_PLUGIN_DATADOG_EVENT_DATADOGAPIKEY}" #2>&1 | grep 'status":"ok"'
+curl -X POST -H "Content-type: application/json" -d "{ \"title\": \"${BUILDKITE_PLUGIN_DATADOG_EVENT_TITLE}\", \"priority\": \"${BUILDKITE_PLUGIN_DATADOG_EVENT_PRIORITY-normal}\", \"tags\": \"${BUILDKITE_PLUGIN_DATADOG_EVENT_TAGS}\", \"alert_type\": \"${BUILDKITE_PLUGIN_DATADOG_EVENT_ALERT_TYPE-info}\" }" "https://app.datadoghq.com/api/v1/events?api_key=${BUILDKITE_PLUGIN_DATADOG_EVENT_DATADOG_API_KEY}" #2>&1 | grep 'status":"ok"'
 
 # if [[ $? != 0 ]]; then
 #   abort

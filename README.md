@@ -13,11 +13,12 @@ Usage:
 - wait # wait for the production deployment to complete
 
 - label: ':datadog: Send deployment complete event to datadog'
+  branches: 'master'
   plugins:
     seek-oss/aws-sm#v1.0.0:
       env:
         DATADOG_API_KEY: arn of the secret
-    seek-oss/datadog-event#0.0.6:
+    seek-oss/datadog-event#v0.0.2:
       title: $BUILDKITE_PIPELINE_SLUG deployed by $BUILDBOX_BUILD_CREATOR
       tags: event-type:deployment,branch:$BUILDKITE_BRANCH # multiple tags can be sent to datadog
       env: DATADOG_API_KEY

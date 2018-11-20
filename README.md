@@ -1,6 +1,6 @@
 # Datadog Event Buildkite Plugin
 
-An [Buildkite plugin](https://buildkite.com/docs/agent/v3/plugins) for sending event to datadog
+A [Buildkite plugin](https://buildkite.com/docs/agent/v3/plugins) for sending event to datadog
 
 It contains a [command hook](hooks/command), and [tests](tests/test.bats) using [plugin-tester](https://github.com/buildkite-plugins/plugin-tester).
 

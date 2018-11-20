@@ -11,9 +11,9 @@ configuration:
       type: string
     alert-type:
       type: string
-    datadog-api-key:
+    env:
       type: string
   required:
     - title
     - tags
-    - datadog-api-key
+    - env

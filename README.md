@@ -19,7 +19,7 @@ Usage:
     seek-oss/aws-sm#v1.0.0:
       env:
         DATADOG_API_KEY: arn of the secret
-    seek-oss/datadog-event#v0.0.2:
+    seek-oss/datadog-event#v0.0.4:
       title: $BUILDKITE_PIPELINE_SLUG deployed by $BUILDBOX_BUILD_CREATOR
       tags: event-type:deployment,branch:$BUILDKITE_BRANCH # multiple tags can be sent to datadog
       env: DATADOG_API_KEY # DATADOG_API_KEY contains plain text value of the api key

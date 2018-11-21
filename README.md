@@ -21,7 +21,7 @@ Usage:
     seek-oss/datadog-event#v0.0.2:
       title: $BUILDKITE_PIPELINE_SLUG deployed by $BUILDBOX_BUILD_CREATOR
       tags: event-type:deployment,branch:$BUILDKITE_BRANCH # multiple tags can be sent to datadog
-      env: DATADOG_API_KEY
+      env: DATADOG_API_KEY # DATADOG_API_KEY contains plain text value of the api key
   agents:
     queue: xxx-prod:cicd # agent need to be able to assume role to fetch the datadog api key from ssm
 ```

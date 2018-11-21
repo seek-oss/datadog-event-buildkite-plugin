@@ -15,6 +15,7 @@ Usage:
 - label: ':datadog: Send deployment complete event to datadog'
   branches: 'master'
   plugins:
+    # We use seek-oss/aws-sm plugin to retrieve the datadog api key stored in aws secret manager
     seek-oss/aws-sm#v1.0.0:
       env:
         DATADOG_API_KEY: arn of the secret

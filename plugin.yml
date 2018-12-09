@@ -1,4 +1,4 @@
-name: datadog-event
+name: Datadog Event
 description: Send a deployment complete event to datadog
 author: https://github.com/seek-oss
 configuration:
